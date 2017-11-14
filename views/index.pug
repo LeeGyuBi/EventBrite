@@ -1,0 +1,782 @@
+extends layout
+
+block content
+
+
+    nav.navbar.navbar-expand-lg
+      #title.navbar-brand Eventbrite
+      |     
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+          img.category(src='images/category.png', alt='category')
+      |     
+      #navbarNavDropdown.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item.active
+            a.nav-link(href='#')
+              | BROWSE EVENTS
+              span.sr-only (current)
+          |         
+          li.nav-item.dropdown
+            a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | LEARN MORE
+            |           
+            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+              a.dropdown-item(href='#') Blog
+              |             
+              a.dropdown-item(href='#') Resources
+              |             
+              a.dropdown-item(href='#') Fees
+              |             
+              a.dropdown-item(href='#') How it works
+              |             
+              a.dropdown-item(href='#') Features
+              |             
+              a.dropdown-item(href='#') Music Ticketing
+          |         
+          li.nav-item.dropdown
+            a#navbarDropdownMenuLink2.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | HELP
+            |           
+            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+              a.dropdown-item(href='#') Where are my tickets?
+              |             
+              a.dropdown-item(href='#') How to contact the event organizer
+              |             
+              .dropdown-divider
+              |             
+              a#Help.dropdown-item(href='#') Help Center
+          |         
+          li.nav-item
+            a.nav-link(href='/signin') SIGN IN
+          |         
+          li.nav-item
+            a#CREATE.nav-link(href='#') CREATE EVENT
+    // 이미지
+    .jumbotron
+      #carouselExampleSlidesOnly.carousel.slide(data-ride='carousel')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src='images/1.jpg', alt='First slide')
+          |         
+          .carousel-item
+            img.d-block.w-100(src='images/2.jpg', alt='Second slide')
+          |         
+          .carousel-item
+            img.d-block.w-100(src='images/3.jpg', alt='Third slide')
+      // 검색박스
+      .box
+        #exp Find your next experience
+        |     
+        .container
+          form.form-inline(action='#', method='POST')
+            .searchbar
+              .input-group.custom-search-form
+                input.form-control1(type='text', placeholder='Search events or category')
+                |             
+                .input-group.custom-search-form
+                  input.form-control2(type='text', placeholder='City or Location')
+                  |               
+                  select.form-control
+                    option All Dates
+                    |                                     
+                    option Today
+                    |                                     
+                    option Tomorrow
+                    |                                     
+                    option This Week
+                    |                                     
+                    option This Weekend
+                    |                                     
+                    option Next Week
+                    |                                     
+                    option Next Month
+                  |               
+                  button#button.btn.btn-default(type='button') SEARCH
+      |   
+      .Pop
+        | Popular Events in 
+        a(href='#') Republic of Korea
+      // 카드
+      .container
+        .card-group
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/11.jpg', alt='Card image cap')
+              |           
+              span.dollars $90 - $115
+              |           
+              .card-body
+                .card-date FRI, NOV 17 8:00 AM
+                |             
+                .card-title KORCOS 2017 Conference and Workshops at Chadwick International
+                |             
+                .card-place Chadwick International, Songdo
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #FamilyEducation
+                  a.hash(href='#') #Confer...
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/22.jpg', alt='Card image cap')
+              |           
+              span.dollars FREE
+              |           
+              .card-body
+                .card-date SAT, AUG 4 7:00 PM
+                |             
+                .card-title Super Spectacular Korea Reunion
+                |             
+                .card-place Incheon, Incheon
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #FoodDrink
+                  a.hash(href='#') #Party
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/33.jpg', alt='Card image cap')
+              |           
+              span.dollars $18 - $25
+              |           
+              .card-body
+                .card-date FRI, OCT 27 6:00 PM
+                |             
+                .card-title Startup Weekend Incheon 2017 (EdTech)
+                |             
+                .card-place Incheon Global Campus (SUNY C103, B...)
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #Business
+                  a.hash(href='#') #Class
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/44.jpg', alt='Card image cap')
+              |           
+              span.dollars FREE
+              |           
+              .card-body
+                .card-date SAT, OCT 21 9:00 AM &amp; 9 MORE
+                |             
+                .card-title Dwight School Seoul - Family Photos Day 2017
+                |             
+                .card-place The Gallery
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #FamilyEducation
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/55.jpg', alt='Card image cap')
+              |           
+              span.dollars FREE
+              |           
+              .card-body
+                .card-date WED, NOV 15 9:00 AM
+                |             
+                .card-title Road System Resilience to Climate Change &amp; Extreme Weather Events
+                |             
+                .card-place Korea International Exhibition &amp; Conven...
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #Business
+                  a.hash(href='#') #Class
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/66.jpg', alt='Card image cap')
+              |           
+              span.dollars $750
+              |           
+              .card-body
+                .card-date FRI, OCT 20 7:00 PM
+                |             
+                .card-title Grease, School Edition - October 20, 2017
+                |             
+                .card-place Seoul Foreign School | &#xC11C;&#xC6B8;&#xC678;&#xAD6D;&#xC778;&#xD559;&#xAD50;
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #Arts
+                  a.hash(href='#') #Performance
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/77.jpg', alt='Card image cap')
+              |           
+              span.dollars FREE
+              |           
+              .card-body
+                .card-date SAT, OCT 21 7:00 PM
+                |             
+                .card-title Grease, School Edition - October 20, 2017
+                |             
+                .card-place Seoul Foreign School | &#xC11C;&#xC6B8;&#xC678;&#xAD6D;&#xC778;&#xD559;&#xAD50;
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #Arts
+                  a.hash(href='#') #Performance
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/88.jpg', alt='Card image cap')
+              |           
+              span.dollars FREE
+              |           
+              .card-body
+                .card-date TUE, NOV 7 3:00 PM
+                |             
+                .card-title Asia Privacy Bridge Forum in Fall 2017
+                |             
+                .card-place Baekyangnuri, Yonsei University; Seoul
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #Government
+                  a.hash(href='#') #Conference
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/99.jpg', alt='Card image cap')
+              |           
+              span.dollars FREE
+              |           
+              .card-body
+                .card-date SAT, OCT 14 9:15 AM &amp; 14 MORE
+                |             
+                .card-title Seoul Foreign School - Family Photos Day 2017
+                |             
+                .card-place Lyso Black Box
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #FamilyEducation
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/100.jpg', alt='Card image cap')
+              |           
+              span.dollars FREE
+              |           
+              .card-body
+                .card-date THU, NOV 9 6:00 PM
+                |             
+                .card-title APSIA: Graduate School Fair, Seoul
+                |             
+                .card-place Millennuim Seoul Hilton
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #Government
+                  a.hash(href='#') #Networking
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/111.jpg', alt='Card image cap')
+              |           
+              span.dollars FREE
+              |           
+              .card-body
+                .card-date TUE, OCT 31 10:00 AM
+                |             
+                .card-title On the Road: Coffee with Carlson School MS Programs in Seoul
+                |             
+                .card-place Starbucks, Seoul
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #Government
+                  a.hash(href='#') #Networking
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+          |       
+          .col-md-4.col-sm-6
+            .card.h-100
+              img.card-img-top(src='images/1222.jpg', alt='Card image cap')
+              |           
+              span.dollars FREE
+              |           
+              .card-body
+                .card-date SAT, NOV 4 10:00 AM
+                |             
+                .card-title MTTM Ignite Conference
+                |             
+                .card-place culpepper Christian Servicemen Center...
+              |           
+              .card-footer
+                small.text-muted
+                  a.hash(href='#') #Spirituality
+                  a.hash(href='#') Conference
+                |             
+                .grey
+                  img.grey_up(src='images/upload.png', onmouseover='this.src="images/upload_hover.png"', onmouseout='this.src="images/upload.png"', alt='up')
+                  |               
+                  img.grey_book(src='images/bookmark.png', onmouseover='this.src="images/bookmark_hover.png"', onmouseout='this.src="images/bookmark.png"', alt='book')
+      |   
+      .See SEE MORE
+      |   
+      .Pop Browse by Top Categories
+      |   
+      .container
+        .imgscale
+          .row
+            .col-md-8.col-sm-12
+              .imagecard
+                img.card-img(src='images/music.jpeg', alt='Card image')
+                |             
+                .card-img-overlay
+                  h4.card-title2 Music
+                  |               
+                  p.card-text2 Intimate house concert, major music festivals, and the occasional dance party
+            |         
+            .col-md-4.col-sm-6
+              .imagecard
+                img.card-img(src='images/food.jpeg', alt='Card image')
+                |             
+                .card-img-overlay
+                  h4.card-title2 Food &amp; Drink
+                  |               
+                  p.card-text2 Dinner paries, tasting, and big-time festivals
+            |         
+            .col-md-4.col-sm-6
+              .imagecard
+                img.card-img(src='images/classes.jpg', alt='Card image')
+                |             
+                .card-img-overlay
+                  h4.card-title2 Classes
+                  |               
+                  p.card-text2 Enlightening seminars, technical workshops, and fitness classes
+            |         
+            .col-md-4.col-sm-6
+              .imagecard
+                img.card-img(src='images/arts.jpg', alt='Card image')
+                |             
+                .card-img-overlay
+                  h4.card-title2 Arts
+                  |               
+                  p.card-text2 Plays, comedy nights, art exhibitions and flim festivals
+            |         
+            .col-md-4.col-sm-6
+              .imagecard
+                img.card-img(src='images/parties.jpg', alt='Card image')
+                |             
+                .card-img-overlay
+                  h4.card-title2 Parties
+                  |               
+                  p.card-text2 Casual happy hours, singles nights, and all-night celebrations
+            |         
+            .col-md-4.col-sm-6
+              .imagecard
+                img.card-img(src='images/sports.jpg', alt='Card image')
+                |             
+                .card-img-overlay
+                  h4.card-title2 Sports &amp; Wellness
+                  |               
+                  p.card-text2 Obstacle races, drop-in yoga calsses, and the big game
+            |         
+            .col-md-8.col-sm-12
+              .imagecard
+                img.card-img(src='images/Networking.jpg', alt='Card image')
+                |             
+                .card-img-overlay
+                  h4.card-title2 Networking
+                  |               
+                  p.card-text2 Busines mixer, hobby meetups, and panel discussions
+      |   
+      .bottom
+        .bottombox
+          .ulblock
+            .bottomtitle Use Eventbrite
+            |         
+            ul
+              li
+                a.bottom-text(href='#') How It Works
+              |           
+              li
+                a.bottom-text(href='#') For Large &amp; Comples Events
+              |           
+              li
+                a.bottom-text(href='#') Pricing
+              |           
+              li
+                a.bottom-text(href='#') Community
+              |           
+              li
+                a.bottom-text(href='#') Eventbrite Mobile App
+              |           
+              li
+                a.bottom-text(href='#') Eventbrite Check-In App
+              |           
+              li
+                a.bottom-text(href='#') Eventbrite Spectrum
+              |           
+              li
+                a.bottom-text(href='#') Rally - Fun Things To Do
+              |           
+              li
+                a.bottom-text(href='#') Event Organuzing Resources
+              |           
+              li
+                a.bottom-text(href='#') Sitemap
+          |       
+          .ulblock
+            .bottomtitle Plan Events
+            |         
+            ul
+              li
+                a.bottom-text(href='#') Conference Management
+              |           
+              li
+                a.bottom-text(href='#') Software
+              |           
+              li
+                a.bottom-text(href='#') Reunions
+              |           
+              li
+                a.bottom-text(href='#') Nonprofits &amp; Fundraisers
+              |           
+              li
+                a.bottom-text(href='#') Eventbrite Reviews
+              |           
+              li
+                a.bottom-text(href='#') Sell Tickets
+              |           
+              li
+                a.bottom-text(href='#') Event Management &amp; Planning
+              |           
+              li
+                a.bottom-text(href='#') Online Event Registration
+              |           
+              li
+                a.bottom-text(href='#') Online RSVP
+              |           
+              li
+                a.bottom-text(href='#') Venue Booking &amp; Management
+              |           
+              li
+                a.bottom-text(href='#') Event Promotion
+          |       
+          .ulblock
+            .bottomtitle Find Events
+            |         
+            ul
+              li
+                a.bottom-text(href='#') Boston Events
+              |           
+              li
+                a.bottom-text(href='#') Chicago Events
+              |           
+              li
+                a.bottom-text(href='#') Denver Events
+              |           
+              li
+                a.bottom-text(href='#') Houston Events
+              |           
+              li
+                a.bottom-text(href='#') Los Angeles Events
+              |           
+              li
+                a.bottom-text(href='#') Nashville Events
+              |           
+              li
+                a.bottom-text(href='#') New York Events
+              |           
+              li
+                a.bottom-text(href='#') San Diego Events
+              |           
+              li
+                a.bottom-text(href='#') San Francisco Events
+              |           
+              li
+                a.bottom-text(href='#') All Cities
+          |       
+          .ulblock
+            .bottomtitle Connect With Us
+            |         
+            ul
+              li
+                img.bottomimg(src='images/mail.png', alt='mail')
+                a.bottom-text(href='#') Contact Support
+              |           
+              li
+                img.bottomimg(src='images/mail.png', alt='mail')
+                a.bottom-text(href='#') Contact Sales
+              |           
+              li
+                img.bottomimg(src='images/twitter.png', alt='twitter')
+                a.bottom-text(href='#') Twitter
+              |           
+              li
+                img.bottomimg(src='images/facebook.png', alt='facebook')
+                a.bottom-text(href='#') Facebook
+              |           
+              li
+                img.bottomimg(src='images/in.png', alt='in')
+                a.bottom-text(href='#') Linkedln
+              |           
+              li
+                img.bottomimg(src='images/insta.png', alt='instagram')
+                a.bottom-text(href='#') Instagram
+              |           
+              li
+                img.bottomimg(src='images/google.png', alt='google')
+                a.bottom-text(href='#') Google+
+        |     
+        .line
+          hr
+        |     
+        .bottombox2
+          .bottomtitle Country
+          |       
+          ul
+            li.Con
+              a.Country(href='#') Argentina
+            |         
+            li.Con
+              a.Country(href='#') Austrailia
+            |         
+            li.Con
+              a.Country(href='#') Brasil
+            |         
+            li.Con
+              a.Country(href='#') Canada (EN)
+            |         
+            li.Con
+              a.Country(href='#') Canada (FR)
+            |         
+            li.Con
+              a.Country(href='#') Chile
+            |         
+            li.Con
+              a.Country(href='#') Colombia
+            |         
+            li.Con
+              a.Country(href='#') Deutschland
+            |         
+            li.Con
+              a.Country(href='#') Espana
+            |         
+            li.Con
+              a.Country(href='#') France
+            |         
+            li.Con
+              a.Country(href='#') Hong Kong
+            |         
+            li.Con
+              a.Country(href='#') Ireland
+            |         
+            li.Con
+              a.Country(href='#') Italia
+            |         
+            li.Con
+              a.Country(href='#') Mexico
+            |         
+            li.Con
+              a.Country(href='#') Nederalnd
+            |         
+            li.Con
+              a.Country(href='#') New Zealand
+            |         
+            li.Con
+              a.Country(href='#') Peru
+            |         
+            li.Con
+              a.Country(href='#') Portugal
+            |         
+            li.Con
+              a.Country(href='#') Singapore
+            |         
+            li.Con
+              a.Country(href='#') United Kingdom
+            |         
+            li.Con
+              a.Country(href='#') Unite States
+        |     
+        .line
+          hr
+        |     
+        .mobilebottom
+          ul
+            li.Mob
+              a.mobcls(href='#') How It Works
+            |         
+            li.Mob
+              a.mobcls(href='#') Pricing
+            |         
+            li.Mob
+              a.mobcls(href='#') Contact Support
+            |         
+            li.Mob
+              a.mobcls(href='#') Contact Sales
+            |         
+            li.Mob
+              a.mobcls(href='#') About
+            |         
+            li.Mob
+              a.mobcls(href='#') Blog
+            |         
+            li.Mob
+              a.mobcls(href='#') Help
+            |         
+            li.Mob
+              a.mobcls(href='#') Careers
+            |         
+            li.Mob
+              a.mobcls(href='#') Press
+            |         
+            li.Mob
+              a.mobcls(href='#') Security
+            |         
+            li.Mob
+              a.mobcls(href='#') Developers
+            |         
+            li.Mob
+              a.mobcls(href='#') Terms
+            |         
+            li.Mob
+              a.mobcls(href='#') Privacy
+            |         
+            li.Mob
+              a.mobcls(href='#') Cookies
+        |     
+        .bottombox2
+          ul.Menu2
+            li.Con
+              a.Last(href='#') About
+            |         
+            li.Con
+              a.Last(href='#') Blog
+            |         
+            li.Con
+              a.Last(href='#') Help
+            |         
+            li.Con
+              a.Last(href='#') Careers
+            |         
+            li.Con
+              a.Last(href='#') Press
+            |         
+            li.Con
+              a.Last(href='#') Security
+            |         
+            li.Con
+              a.Last(href='#') Developers
+            |         
+            li.Con
+              a.Last(href='#') Terms
+            |         
+            li.Con
+              a.Last(href='#') Privacy
+            |         
+            li.Con
+              a.Last(href='#') Cookies
+        |     
+        .btn-secondary-opdown-toggle(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        |       
+        select.form-control3
+          option United States
+          |                                   
+          option Argentina
+          |                                   
+          option Austrailia
+          |                                   
+          option Brasil
+          |                                   
+          option Canada (EN)
+          |                                   
+          option Canada (FR)
+          |                                   
+          option Deutschland
+          |                                   
+          option Espana
+          |                                   
+          option France
+          |                                   
+          option Hong Kong
+          |                                   
+          option Ireland
+          |                                   
+          option Italia
+          |                                   
+          option Nederalnd
+          |                                   
+          option New Zealand
+          |                                   
+          option Portugal
+          |                                   
+          option Singapore
+          |                                   
+          option United Kingdom
+        |       
+        .line
+          hr
+        |       
+        .copy &#x24D2; 2017 EventBrite
+      // Optional JavaScript
+      // jQuery first, then Popper.js, then Bootstrap JS
+      script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+      |       
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', integrity='sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4', crossorigin='anonymous')
+      |       
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js', integrity='sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1', crossorigin='anonymous')

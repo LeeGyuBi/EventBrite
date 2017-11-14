@@ -1,0 +1,46 @@
+img#logo {
+    display: block;
+    margin: 0 auto;
+    padding-top: 50px; }
+  
+  .start {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0 5px 0;
+    color: #616161;
+    font-weight: 300; }
+  
+  .enter {
+    text-align: center;
+    font-size: 14px;
+    margin: 3px 0 0 20px;
+    color: #616161;
+    font-weight: 500; }
+  
+  .address {
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 350px; }
+  
+  button.btn.btn-primary {
+    border: none;
+    width: 350px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    background-color: #F6682F; }
+  
+  button.btn.btn-primary:hover {
+    background-color: #ff254d; }
+  
+  a#sub {
+    color: white !important; }
+  
+  a#sub:hover {
+    text-decoration: none !important; }
+  
+  /*# sourceMappingURL=signin.css.map */
