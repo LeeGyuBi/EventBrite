@@ -2,15 +2,28 @@ body {
   background-color: #F8F8FA !important; }
 
 #title {
+  margin-left: 10px;
   padding-right: 10px;
+  border-right: 1px solid #D4D4D4; }
+
+a#text_title {
   color: #E69407;
   font-size: 25px;
-  font-weight: bold;
-  border-right: 1px solid #D4D4D4; }
+  font-weight: bold; }
+
+a#text_title:hover {
+  text-decoration-line: none;
+  color: #E69407; }
 
 nav {
   background-color: white;
-  border-bottom: 1px solid #D4D4D4; }
+  border-bottom: 1px solid #D4D4D4;
+  padding: 0;
+  margin: 0; }
+
+nav.navbar-expand-lg {
+  padding: 0;
+  margin: 0; }
 
 a.nav-link {
   border-left: 1px solid #D4D4D4;
@@ -21,6 +34,14 @@ a.nav-link {
 a.nav-link:hover {
   background-color: #CECECE;
   color: black; }
+
+.navbar-nav.ml-auto {
+  padding: 0;
+  margin: 0; }
+
+.nav-item {
+  padding: 0;
+  margin: 0; }
 
 #CREATE {
   color: #0C7DBB;
@@ -252,8 +273,12 @@ img.card-img {
   margin-bottom: 5px;
   transition: all 0.3s; }
 
+.imagecard {
+  overflow: hidden; }
+
 .imagecard:hover .card-img {
-  transform: scale(1.1); }
+  transform: scale(1.2);
+  -webkit-filter: grayscale(100%); }
 
 .card-title2 {
   margin-top: 40px !important;
@@ -277,6 +302,7 @@ img.card-img {
   visibility: visible; }
 
 .bottom {
+  margin-top: 100px;
   border-top: 7px solid #636363;
   background-color: #282C35; }
 

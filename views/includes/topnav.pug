@@ -1,0 +1,40 @@
+.header.clearfix
+    nav.navbar.navbar-expand-lg
+      #title.navbar-brand
+              a#text_title(href='/') Eventbrite
+      |     
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+          img.category(src='images/category.png', alt='category')
+      |     
+      #navbarNavDropdown.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item.active
+            a.nav-link(href='#')
+              | BROWSE EVENTS
+              span.sr-only (current)
+          |         
+          li.nav-item.dropdown
+            a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              | LEARN MORE
+            |           
+            .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+              a.dropdown-item(href='#') Blog
+              |             
+              a.dropdown-item(href='#') Resources
+              |             
+              a.dropdown-item(href='#') Fees
+              |             
+              a.dropdown-item(href='#') How it works
+              |             
+              a.dropdown-item(href='#') Features
+              |             
+              a.dropdown-item(href='#') Music Ticketing
+          |         
+          li.nav-item
+            a.nav-link(href='/users/new') SIGN UP         
+          li.nav-item
+            a.nav-link(href='/signin') SIGN IN
+          |         
+          li.nav-item
+            a#CREATE.nav-link(href='#') CREATE EVENT

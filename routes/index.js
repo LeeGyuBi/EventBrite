@@ -10,4 +10,8 @@ router.get('/signin', function(req, res, next) {
   res.render('signin');
 });
 
+router.get('users/new', function(req, res, next) {
+  res.render('new');
+});
+
 module.exports = router;
