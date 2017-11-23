@@ -1,6 +1,24 @@
 .form-group
   label(for="title") Title
-  input.form-control(type="text", name="title", placeholder="What's your question?", value=question.title)
+  input.form-control(type="text", name="title", placeholder="Give it a short distinct name", value=question.title)
+.form-group
+  label(for="location") Location
+  input.form-control(type="text", name="location", placeholder="Search for a venue or address.", value=question.location)
+.form-group.row
+  .col-6 
+    label(for="start") STARTS
+  .col-6
+    label(for="end") ENDS
+.form-group.row  
+  .col-3
+    input.form-control(type="date", name="start", placeholder=" ", value=question.start)
+  .col-3
+    input.form-control(type="time", name="starttime", placeholder=" ", value=question.starttime)
+  .col-3
+    input.form-control(type="date", name="end", placeholder=" ", value=question.end)
+  .col-3
+    input.form-control(type="time", name="endtime", placeholder=" ", value=question.endtime)    
+
 .form-group
   label(for="question") Question
   textarea.form-control(name="content", rows="5")= question.content

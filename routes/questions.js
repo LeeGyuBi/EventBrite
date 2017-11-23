@@ -62,6 +62,11 @@ router.put('/:id', catchErrors(async (req, res, next) => {
     return res.redirect('back');
   }
   question.title = req.body.title;
+  question.location = req.body.location;
+  question.start = req.body.start;
+  question.starttime = req.body.starttime;
+  question.end = req.body.end;
+  question.endtime = req.body.endtime;
   question.content = req.body.content;
   question.tags = req.body.tags.split(" ").map(e => e.trim());
 
@@ -80,6 +85,11 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
   const user = req.user;
   var question = new Question({
     title: req.body.title,
+    location: req.body.location,
+    start: req.body.start,
+    starttime: req.body.starttime,
+    end: req.body.end,
+    endtime: req.body.endtime,
     author: user._id,
     content: req.body.content,
     tags: req.body.tags.split(" ").map(e => e.trim()),
@@ -108,7 +118,6 @@ router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
   await question.save();
 
   req.flash('success', 'Successfully answered');
-  res.redirect(`/questions/${req.params.id}`);
 }));
 
 

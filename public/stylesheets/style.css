@@ -27,10 +27,9 @@ nav.navbar-expand-lg {
 
 a.nav-link {
   border-left: 1px solid #D4D4D4;
-  color: rgb(83, 83, 83);
+  color: #1D1D1D;
   padding: 15px;
-  margin-top: 0; 
-  font-weight: 400;}
+  margin-top: 0; }
 
 a.nav-link:hover {
   background-color: #CECECE;
@@ -538,7 +537,7 @@ img#logo {
   padding-top: 30px;
   width: 350px; }
 
-button.btn.btn-primary {
+button.btn1.btn-primary {
   border: none;
   width: 350px;
   display: block;
@@ -572,7 +571,7 @@ form.form-signin {
   font-weight: 600;
   color: white;
   text-decoration: none;
-  background-color: #2f6ef6; }
+  background-color: #f68f2f; }
 
 /*# sourceMappingURL=signin.css.map */
 
