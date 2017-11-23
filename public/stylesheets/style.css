@@ -27,9 +27,10 @@ nav.navbar-expand-lg {
 
 a.nav-link {
   border-left: 1px solid #D4D4D4;
-  color: #1D1D1D;
+  color: rgb(83, 83, 83);
   padding: 15px;
-  margin-top: 0; }
+  margin-top: 0; 
+  font-weight: 400;}
 
 a.nav-link:hover {
   background-color: #CECECE;
@@ -556,6 +557,22 @@ a#sub {
 
 a#sub:hover {
   text-decoration: none !important; }
+
+form.form-signin {
+  display: block;
+  margin: 0 auto;
+  width: 400px; }
+
+.btn-block.btn-block {
+  border: none;
+  width: 350px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  background-color: #2f6ef6; }
 
 /*# sourceMappingURL=signin.css.map */
 

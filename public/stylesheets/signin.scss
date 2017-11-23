@@ -42,5 +42,21 @@ img#logo {
   
   a#sub:hover {
     text-decoration: none !important; }
-  
+
+  form.form-signin{
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+  }
+  .btn-block.btn-block{  
+    border: none;
+    width: 350px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(47, 110, 246); 
+  }  
   /*# sourceMappingURL=signin.css.map */
