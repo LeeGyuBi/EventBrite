@@ -50,7 +50,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // _method를 통해서 method를 변경할 수 있도록 함. PUT이나 DELETE를 사용할 수 있도록.
-app.use(methodOverride('_method', {methods: ['POST', 'GET']}));
+app.use(methodOverride('_method', {methods: ['POST', 'GET','PUT']}));
 
 
 // sass, scss를 사용할 수 있도록

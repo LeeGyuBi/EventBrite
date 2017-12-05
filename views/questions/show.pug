@@ -6,11 +6,16 @@ block content
 
     .question.show
       .content= question.content
+      .content= "장소 | " + question.location
+      .content= "시작날짜 | " + question.start
+      .content= "시작시간 | " + question.starttime
+      .content= "종료날짜 | " + question.end
+      .content= "종료시간 | " + question.endtime
       include _question
 
       .buttons
         button.btn.btn-primary #[i.fa.fa-thumbs-up] Like
-        if currentUser && question.author.id == currentUser.id
+        if question.author && currentUser && question.author.id == currentUser.id
           | 
           a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
           | 

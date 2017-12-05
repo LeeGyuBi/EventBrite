@@ -20,8 +20,36 @@
     input.form-control(type="time", name="endtime", placeholder=" ", value=question.endtime)    
 
 .form-group
-  label(for="question") Question
+  label(for="question") INPUT
   textarea.form-control(name="content", rows="5")= question.content
 .form-group
   label(for="tags") Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
+
+select.form-control#type(onchange="changeTypeSelect()")
+    option(selected) Select the type of event
+    option Camp
+    option Conference
+    option Convention
+    option Dinner or Gala
+    option Festival
+    option Game
+    option Party
+    option Seminar or Talk
+    option Tour
+
+select.form-control#type(onchange="changeTypeTopic()")
+    option(selected) Select a topic
+    option Auto
+    option Charity
+    option Community
+    option Fashion
+    option Food
+    option Health
+    option Music
+    option Other
+    option School
+
+.Pay
+  button.btn.btn-outline-secondary(type='button') FREE
+  button.btn.btn-outline-primary(type='button') PAID

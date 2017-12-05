@@ -575,4 +575,17 @@ form.form-signin {
 
 /*# sourceMappingURL=signin.css.map */
 
+select.form-control{
+  margin-bottom: 20px;
+  width : 300px; 
+}
+
+.Pay{
+  text-align: center;
+  display: block;
+  margin: 20px auto;
+}
+
+
+
 /*# sourceMappingURL=style.css.map */

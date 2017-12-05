@@ -69,7 +69,7 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   question.endtime = req.body.endtime;
   question.content = req.body.content;
   question.tags = req.body.tags.split(" ").map(e => e.trim());
-
+  
   await question.save();
   req.flash('success', 'Successfully updated');
   res.redirect('/questions');

@@ -11,7 +11,7 @@ block content
     h1.main-title 
       | Events
       if questions.total > 0
-        .small Total #{questions.total} question(s)
+        .small TOTAL #{questions.total} QUESTION(s)
 
     if questions.total <= 0 
       .alert.alert-info No events available yet
@@ -19,7 +19,10 @@ block content
       .questions
         each question in questions.docs
           .question
+            |제목 |  
             a.title(href=`/questions/${question.id}`)= question.title
+            |<br>장소 | 
+            a.location #{question.location}
             include _question
 
       +paginate(questions, '/questions', {query: "???XXX&&"})
