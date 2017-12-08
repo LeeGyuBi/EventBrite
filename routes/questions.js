@@ -1,6 +1,8 @@
 const express = require('express');
 const Question = require('../models/question');
 const Answer = require('../models/answer'); 
+
+
 const catchErrors = require('../lib/async-error');
 
 const router = express.Router();
@@ -15,6 +17,48 @@ function needAuth(req, res, next) {
   }
 }
 
+// event를 만들 때 입력폼이 모두 입력되었는지 검사
+function validateForm(form, options) {
+
+  if (!form.title) {
+    return '이벤트 타이틀을 입력 해 주세요.';
+  }
+
+  if (!form.location) {
+    return '이벤트 장소를 입력 해 주세요.';
+  }
+
+  if (!form.event_description) {
+    return '이벤트 상세 설명을 입력 해 주세요.';
+  }
+
+  if (!form.organizer_name) {
+    return '이벤트 등록 조직 이름을 입력 해 주세요.';
+  }
+
+  if (!form.organizer_description) {
+    return '이벤트 등록 조직 설명을 입력 해 주세요.';
+  }
+
+  if (!form.tags) {
+    return '태그를 입력 해 주세요.';
+  }
+
+  //if (!form.price) {
+    //return '이벤트 티켓 종류를 선택 하고 가격을 입력 해 주세요.';
+  //}
+
+  if (!form.event_type) {
+    return '이벤트 종류를 선택 해 주세요.';
+  }
+
+  if (!form.event_topic) {
+    return '이벤트 분야를 선택 해 주세요.';
+  }
+
+  return null;
+}
+
 /* GET questions listing. */
 router.get('/', catchErrors(async (req, res, next) => {
   const page = parseInt(req.query.page) || 1;
@@ -25,7 +69,16 @@ router.get('/', catchErrors(async (req, res, next) => {
   if (term) {
     query = {$or: [
       {title: {'$regex': term, '$options': 'i'}},
-      {content: {'$regex': term, '$options': 'i'}}
+      {start: {'$regex': term, '$options': 'i'}},
+      {starttime: {'$regex': term, '$options': 'i'}},
+      {end: {'$regex': term, '$options': 'i'}},
+      {endtime: {'$regex': term, '$options': 'i'}},
+      {event_description: {'$regex': term, '$options': 'i'}},
+      {organizer_name: {'$regex': term, '$options': 'i'}},
+      {organizer_description: {'$regex': term, '$options': 'i'}},
+      {price: {'$regex': term, '$options': 'i'}},
+      {event_type: {'$regex': term, '$options': 'i'}},
+      {event_topic: {'$regex': term, '$options': 'i'}},
     ]};
   }
   const questions = await Question.paginate(query, {
@@ -67,9 +120,15 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   question.starttime = req.body.starttime;
   question.end = req.body.end;
   question.endtime = req.body.endtime;
-  question.content = req.body.content;
+  question.event_description = req.body.event_description;
+  question.organizer_name = req.body.organizer_name;
+  question.organizer_description = req.body.organizer_description;
   question.tags = req.body.tags.split(" ").map(e => e.trim());
-  
+  question.price = req.body.price;
+  question.event_type = req.body.event_type;
+  question.event_topic = req.body.event_topic;
+
+
   await question.save();
   req.flash('success', 'Successfully updated');
   res.redirect('/questions');
@@ -82,6 +141,12 @@ router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
 }));
 
 router.post('/', needAuth, catchErrors(async (req, res, next) => {
+  var err = validateForm(req.body, {needPassword: true});
+  if (err) {
+    req.flash('danger', err);
+    return res.redirect('back');
+  }
+  
   const user = req.user;
   var question = new Question({
     title: req.body.title,
@@ -91,8 +156,13 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     end: req.body.end,
     endtime: req.body.endtime,
     author: user._id,
-    content: req.body.content,
+    event_description: req.body.event_description,
+    organizer_name: req.body.organizer_name,
+    organizer_description: req.body.organizer_description,   
     tags: req.body.tags.split(" ").map(e => e.trim()),
+    price: req.body.price,
+    event_type: req.body.event_type,
+    event_topic: req.body.event_topic,
   });
   await question.save();
   req.flash('success', 'Successfully posted');
@@ -118,6 +188,7 @@ router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
   await question.save();
 
   req.flash('success', 'Successfully answered');
+  res.redirect(`/questions/${req.params.id}`);
 }));
 
 

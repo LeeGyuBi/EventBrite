@@ -10,12 +10,14 @@ var schema = new Schema({
   starttime: {type: String, trim: true, required: true},
   end: {type: String, trim: true, required: true},
   endtime: {type: String, trim: true, required: true},
-  content: {type: String, trim: true, required: true},
   tags: [String],
   numLikes: {type: Number, default: 0},
   numAnswers: {type: Number, default: 0},
   numReads: {type: Number, default: 0},
-  createdAt: {type: Date, default: Date.now}
+  createdAt: {type: Date, default: Date.now},
+  price: {type: String, trim: true},
+  event_type: {type: String, trim: true, required: true},
+  event_topic: {type: String, trim: true, required: true}
 }, {
   toJSON: { virtuals: true},
   toObject: {virtuals: true}

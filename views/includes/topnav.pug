@@ -15,14 +15,19 @@
               | BROWSE EVENTS
               span.sr-only (current)
           |         
-          li.nav-item
-            a.nav-link(href="/users") USERS
+          
           if (!currentUser) 
             li.nav-item
               a.nav-link(href='/signin') SIGN IN
             li.nav-item
               a.nav-link(href='/users/new') SIGN UP
-          else
+          else if (currentUser.name=="관리자")
+            li.nav-item
+              a.nav-link(href="/users") USERS
+            li.nav-item
+              a.nav-link(href='/signout') SIGN OUT   
+
+          else    
             li.nav-item
               a.nav-link(href=`/users/${currentUser._id}`) MY PROFILE
             li.nav-item

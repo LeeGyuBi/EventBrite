@@ -18,38 +18,63 @@
     input.form-control(type="date", name="end", placeholder=" ", value=question.end)
   .col-3
     input.form-control(type="time", name="endtime", placeholder=" ", value=question.endtime)    
+.form-group
+  label(for="event_description") EVENT DESCRIPTION
+  textarea.form-control(name="event_description", rows="5")= question.event_description
+.form-group
+  label(for="organizer_name") ORGANIZER NAME
+  input.form-control(type="text", name="organizer_name", placeholder="What's your event?", value=question.organizer_name)
+.form-group
+  label(for="organizer_description") ORIGANIZER DESCRIPTION
+  textarea.form-control(name="organizer_description", rows="3")= question.organizer_description
 
 .form-group
-  label(for="question") INPUT
-  textarea.form-control(name="content", rows="5")= question.content
-.form-group
-  label(for="tags") Tags
+  label(for="tags") TAGS
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
 
-select.form-control#type(onchange="changeTypeSelect()")
-    option(selected) Select the type of event
-    option Camp
-    option Conference
-    option Convention
-    option Dinner or Gala
-    option Festival
-    option Game
-    option Party
-    option Seminar or Talk
-    option Tour
 
-select.form-control#type(onchange="changeTypeTopic()")
-    option(selected) Select a topic
-    option Auto
-    option Charity
-    option Community
-    option Fashion
-    option Food
-    option Health
-    option Music
-    option Other
-    option School
-
-.Pay
-  button.btn.btn-outline-secondary(type='button') FREE
-  button.btn.btn-outline-primary(type='button') PAID
+.form-group#pay
+  label(for="ticket_price") CREATE TICKET
+  
+  .tab
+    ul
+      li
+        a.btn#FREE 
+          i.fa.fa-plus-square-o(aria-hidden="true")
+          |&nbsp;FREE
+      li
+        a.btn#PAID 
+          i.fa.fa-plus-square-o(aria-hidden="true")
+          |&nbsp;PAID
+    .content
+      .section
+        ul
+          input#payinput.form-control(type="text", name="price", value=question.price)  
+.form-group.row
+  .col-12
+    label(for="EVENT TYPE") EVENT TYPE
+  .col-md-6.col-sm-12
+    select.form-control#type(onchange="changeTypeSelect()")
+      option(selected) Select the type of event
+      option Attraction
+      option Concert of Performance
+      option Conference
+      option Convention 
+      option Festival
+      option Game
+      option Seminar or Talk
+      option Tour
+    input#typeResult.form-control(type="text", name="event_type", value=question.event_type)
+.form-group.row
+  .col-12
+    label(for="EVENT TOPIC") EVENT TOPIC
+  .col-md-4.col-sm-12
+    select.form-control#topic(onchange="changeTopicSelect()")
+      option(selected) Select a topic
+      option Music
+      option Food &amp; Drink
+      option Classes
+      option Art
+      option Parties
+      option Networking
+    input#topicResult.form-control(type="text", name="event_topic", value=question.event_topic)

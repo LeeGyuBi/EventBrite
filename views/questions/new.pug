@@ -1,10 +1,10 @@
 extends ../layout
 
 block content
-  .container
+  .container.question-new
     h1.main-title New Event
     form(action="/questions", method="POST")
       include _form
-      button.btn.btn-outline-primary(type="submit") Post Your Event
+      button.btn.btn-outline-primary(type="submit", style="cursor:pointer") Publish
 
     
