@@ -827,7 +827,7 @@ form.form-signin {
   border-color: #F6682F; }
 
 .question-new h1 {
-  color: #F6682F;
+  color: rgb(22, 22, 22);
   margin-top: 70px; }
 
 .question-new .question-input-group {
@@ -868,19 +868,19 @@ form.form-signin {
   display: block; }
 
 .question-new #pay #FREE, .question-new #pay #PAID {
-  color: #0278b8;
+  color: #525252;
   background-color: white;
   font-size: 15px;
   font-weight: bold;
-  border: 2px solid #0278b8;
+  border: 2px solid #525252;
   border-radius: 5px;
   transition: all 0.2s ease .1s; }
 
 .question-new #pay #FREE:hover, .question-new #pay #PAID:hover,
 .question-new #pay #FREE.active, .question-new #pay #PAID.active {
   color: white;
-  background-color: #013653;
-  border-color: #013653; }
+  background-color: rgb(22, 22, 22);
+  border-color: rgb(22, 22, 22); }
 
 .question-new #pay i {
   font-weight: bold; }
