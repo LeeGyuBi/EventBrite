@@ -21,39 +21,39 @@ function needAuth(req, res, next) {
 function validateForm(form, options) {
 
   if (!form.title) {
-    return '이벤트 타이틀을 입력 해 주세요.';
+    return '이벤트 타이틀을 미입력';
   }
 
   if (!form.location) {
-    return '이벤트 장소를 입력 해 주세요.';
+    return '이벤트 장소를 미입력';
   }
 
   if (!form.event_description) {
-    return '이벤트 상세 설명을 입력 해 주세요.';
+    return '이벤트 상세 설명을 미입력';
   }
 
   if (!form.organizer_name) {
-    return '이벤트 등록 조직 이름을 입력 해 주세요.';
+    return '이벤트 등록 조직 이름 미입력';
   }
 
   if (!form.organizer_description) {
-    return '이벤트 등록 조직 설명을 입력 해 주세요.';
+    return '이벤트 등록 조직 설명 미입력';
   }
 
   if (!form.tags) {
     return '태그를 입력 해 주세요.';
   }
 
-  //if (!form.price) {
-    //return '이벤트 티켓 종류를 선택 하고 가격을 입력 해 주세요.';
-  //}
+  if (!form.price) {
+    return '이벤트 티켓 종류 미선택 / 가격 미입력';
+  }
 
   if (!form.event_type) {
-    return '이벤트 종류를 선택 해 주세요.';
+    return '이벤트 종류 미입력';
   }
 
   if (!form.event_topic) {
-    return '이벤트 분야를 선택 해 주세요.';
+    return '이벤트 분야 미입력';
   }
 
   return null;
